@@ -15,6 +15,55 @@
             color: aliceblue;
         }
 
+        #Paulo-MENU{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(0, 0, 0, 0.100);
+            width: 50px;
+        }
+
+        #Paulo-MENU img{
+            width: 20px;
+            height: 20px;
+        }
+
+        #Paulo-MENU img:hover{
+            width: 25px;
+            height: 25px;
+            background-color: rgba(0, 0, 0, 0.090);
+        }
+
+        #MENU-Flower{
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0);
+            border-width: 0px;
+        }
+
+        #MENU-Options{
+            visibility: hidden;
+            height: 0px;
+            overflow-y: scroll;
+            text-align: center;
+        }
+
+        #MENU-Options button{
+            background-color: rgba(0, 0, 0, 0.200);
+            color: aliceblue;
+            width: 90%;
+            padding: 5px;
+            margin: 10px;
+            font-size: 20px;
+            border: black 3px outset;
+        }
+
+        #MENU-Options button:hover{
+            background-color: rgba(0, 0, 0, 0.400);
+            border-color: blue;
+            cursor: pointer;
+        }
+
         #Paulo-Biografia {
             background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRC8XoMRgQHza-m3x3pGngtGFpR5n5B2boIg8Yn-3pBFWNkBKz8e-sKxDjYdqbl1svDUNLLAmiu56wbQjU45CsLmrQ_Vqvope6KJ0ZK_gxY");
             background-repeat: no-repeat;
@@ -37,7 +86,7 @@
 
         #Paulo-Poemas {
             width: 90%;
-            height: 300px;
+            height: 350px;
             overflow-y: scroll;
             align-self: center;
             border: outset white 2px;
@@ -55,6 +104,13 @@
             float: right;
         }
 
+        #Paulo-Campanha{
+            border: outset white 2px;
+            margin: 1%;
+            padding: 1%;
+            width: 90%;
+        }
+
         #Paulo-Links {
             border: inset 1px white;
             margin: 1%;
@@ -64,8 +120,14 @@
 
         .links {
             display: inline-flex;
-            border: 2px white outset;
-            margin-bottom: 400px;
+            border: 2px rgb(109, 128, 189) outset;
+            margin: 2px;
+            height: 154px;
+        }
+
+        .links:hover{
+            border-color: rgb(13, 53, 187);
+            cursor: pointer;
         }
 
         .links iframe {
@@ -81,10 +143,48 @@
             display: flex;
             visibility: hidden;
         }
+
+        .Social img{
+            background-color: black;
+            border: 5px outset rgb(130, 109, 189);
+            margin: 5px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .Social img:hover{
+            border-color: rgb(74, 13, 187);
+        }
+
+        #special-links{
+         display: inline-flex;
+         height: 400px;
+        }
+
     </style>
 </head>
 
 <body>
+    <div id="Paulo-MENU">
+        <button id="MENU-Flower" onclick="toggleMenu()"><img src="icons/flower.png"></button>
+        <div id="MENU-Options">
+            <h2>Paulo Leminski</h2>
+            <br><br><hr><br><br>
+            <button onclick="redirect(0)">Biografia</button>
+            <button onclick="redirect(1)">Poemas</button>
+            <button onclick="redirect(2)">Campanha</button>
+            <button onclick="redirect(3)">Mais</button>
+            <br><br><hr><br><br>
+            <b>Grupo do Projeto</b>
+            <p>Guilherme - TI</p>
+            <p>Felipe</p>
+            <p>Daniel</p>
+            <p>Davi</p>
+            <p>Diogo</p>
+            <p>Pedro</p>
+            <p>Vinicius</p>
+        </div>
+    </div>
     <div id="Paulo-Biografia">
         <br>
         <h1>Quem foi Paulo Leminski?</h1>
@@ -93,16 +193,18 @@
             trocadilhos, brincadeiras com ditados populares e influência do haicai, além de abusar de gírias e
             palavrões. Foi influenciado pela cultura japonesa, principalmente pela poesia curta e objetiva dos haicais
             de Matsuo Bashō, autor sobre o qual Leminski escreveu uma biografia. Além da influência japonesa em sua
-            poesia, Leminski também era faixa preta de judô. <br> 
-            <b>Curiosidade: Paulo é considerado o mais "pop" poeta brasileiro</b></p>
+            poesia, Leminski também era faixa preta de judô. <br>
+            <b>Curiosidade: Paulo é considerado o mais "pop" poeta brasileiro</b>
+        </p>
     </div>
     <br>
     <center>
         <div id="Paulo-Poemas">
             <div id="Poemas-Header">
-                <h4>Poemas de Paulo</h4>
-                <button title="Poema Aleatório" onclick="redirectPoem()">^</button>
+                <button title="Mais Poemas" onclick="redirectPoem()">^</button>
                 <button title="Poema Aleatório" onclick="generatePoem()"> → </button>
+                <br>
+                <h4>Poemas de Paulo</h4>
                 <label id="Poema-Title"></label>
             </div>
             <br>
@@ -112,22 +214,42 @@
             <br>
         </div>
         <br>
+        <div id="Paulo-Campanha">
+            <h1>Campanha de Paulo</h1>
+            <label>Vote Paulo nas Eleições Literárias!</label>
+        </div>
+        <br>
         <div id="Paulo-Links">
             <h1>Mais sobre Paulo</h1>
+            <div class="Social">
+                <a href="https://www.instagram.com/paulo_leminski_uni/" title="Clique Aqui">
+                    <img src="icons/insta.png">
+                </a>
+                <p style="margin-top: 0px;">Instagram do Projeto</p>
+            </div>
             <br>
-            <div id="wiki" class="links" onmouseenter="wikihover()" onmouseleave="wikileave()">
-                <iframe id="wikiframe" src="https://pt.wikipedia.org/wiki/Paulo_Leminski"></iframe>
-                <div id="wikitext">Wiki de Paulo Leminski <a href="https://pt.wikipedia.org/wiki/Paulo_Leminski">Clique aqui</a></div>
-            </div>
-            <div id="frase" class="links" onmouseenter="frasehover()" onmouseleave="fraseleave()">
-                <iframe id="fraseframe"
-                    src="https://brasilescola.uol.com.br/literatura/paulo-leminski.htm#Frases+de+Paulo+Leminski"></iframe>
-                <div id="frasetext">Frases de Paulo Leminski <a href="https://brasilescola.uol.com.br/literatura/paulo-leminski.htm#Frases+de+Paulo+Leminski">Clique aqui</a></div>
-            </div>
-            <div id="livro" class="links" onmouseenter="livroshover()" onmouseleave="livrosleave()">
-                <iframe id="livrosframe"
-                    src="https://www.estadao.com.br/web-stories/cultura/literatura/paulo-leminski-6-livros-para-ler-nos-35-anos-da-morte-do-escritor/?srsltid=AfmBOooLQOGmSGhA--ludLn9gllH7bW7jxVd-d7y0S8HTD1NrY2nokbD"></iframe>
-                <div id="livrostext">Livros de Paulo Leminski <a href="https://www.estadao.com.br/web-stories/cultura/literatura/paulo-leminski-6-livros-para-ler-nos-35-anos-da-morte-do-escritor/?srsltid=AfmBOooLQOGmSGhA--ludLn9gllH7bW7jxVd-d7y0S8HTD1NrY2nokbD">Clique aqui</a></div>
+            <hr>
+            <br>
+            <div id="special-links">
+                <div id="wiki" class="links" onmouseenter="wikihover()" onmouseleave="wikileave()">
+                    <iframe id="wikiframe" src="https://pt.wikipedia.org/wiki/Paulo_Leminski"></iframe>
+                    <div id="wikitext">Wiki de Paulo Leminski <a href="https://pt.wikipedia.org/wiki/Paulo_Leminski">Clique
+                            aqui</a></div>
+                </div>
+                <div id="frase" class="links" onmouseenter="frasehover()" onmouseleave="fraseleave()">
+                    <iframe id="fraseframe"
+                        src="https://brasilescola.uol.com.br/literatura/paulo-leminski.htm"></iframe>
+                    <div id="frasetext">Frases de Paulo Leminski <a
+                            href="https://brasilescola.uol.com.br/literatura/paulo-leminski.htm#Frases+de+Paulo+Leminski">Clique
+                            aqui</a></div>
+                </div>
+                <div id="livro" class="links" onmouseenter="livroshover()" onmouseleave="livrosleave()">
+                    <iframe id="livrosframe"
+                        src="https://www.estadao.com.br/web-stories/cultura/literatura/paulo-leminski-6-livros-para-ler-nos-35-anos-da-morte-do-escritor/?srsltid=AfmBOooLQOGmSGhA--ludLn9gllH7bW7jxVd-d7y0S8HTD1NrY2nokbD"></iframe>
+                    <div id="livrostext">Livros de Paulo Leminski <a
+                            href="https://www.estadao.com.br/web-stories/cultura/literatura/paulo-leminski-6-livros-para-ler-nos-35-anos-da-morte-do-escritor/?srsltid=AfmBOooLQOGmSGhA--ludLn9gllH7bW7jxVd-d7y0S8HTD1NrY2nokbD">Clique
+                            aqui</a></div>
+                </div>
             </div>
         </div>
     </center>
