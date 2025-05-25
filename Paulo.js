@@ -35,6 +35,10 @@ Poemas = [
         "title":"Além Alma<br>(uma grama depois)",
         "body":"Meu coração lá longe<br>faz sinal que quer voltar<br>Já no peito trago em bronze<br>NÃO HÁ VAGA NEM LUGAR<br>Pra que me serve esse negócio<br>que não cessa de bater?<br>Mais parece um relógio<br>que acabar de enlouquecer<br>Pra que é que eu quero quem chora,<br>se estou tão bm assim,<br>e o vazio que vai lá lá fora<br>cai macio dentro de mim?"
     },
+    {
+        "title":"o que te espera",
+        "body":"você pára<br>a fim de ver<br>o que te espera<br><br>só uma nuvem<br>te separa<br>das estrelas"
+    },
 ]
 
 function generatePoem(){
@@ -60,7 +64,7 @@ function toggleMenu(){
     if (menu.style.visibility == "hidden"){
         menu.style.visibility = "visible";
         menu.style.height = String(window.innerHeight) + "px";
-        document.getElementById("Paulo-MENU").style.backgroundColor = "rgba(0, 0, 0, 0.600)";
+        document.getElementById("Paulo-MENU").style.backgroundColor = "rgba(0, 0, 0, 0.700)";
         document.getElementById("Paulo-MENU").style.width = String(window.innerWidth) + "px";
     }else{
         menu.style.visibility = "hidden";
@@ -144,8 +148,17 @@ function redirect(n){
 var testMobile = /iPhone|Android|iPad/i.test(navigator.userAgent);
 if (testMobile){
     document.getElementById("Paulo-Links").innerHTML = "<h1>Mais sobre Paulo</h1>";
-    document.getElementById("Paulo-Links").innerHTML += "<br><br><a href='https://www.instagram.com/paulo_leminski_uni/'>Instagram do Projeto</a>";
-    document.getElementById("Paulo-Links").innerHTML += "<br><br><a href='https://pt.wikipedia.org/wiki/Paulo_Leminski'>Wiki de Paulo Leminski</a>";
-    document.getElementById("Paulo-Links").innerHTML += "<br><br><a href='https://brasilescola.uol.com.br/literatura/paulo-leminski.htm#Frases+de+Paulo+Leminski'>Frases de Paulo Leminski</a>";
-    document.getElementById("Paulo-Links").innerHTML += "<br><br><a href='https://www.estadao.com.br/web-stories/cultura/literatura/paulo-leminski-6-livros-para-ler-nos-35-anos-da-morte-do-escritor/?srsltid=AfmBOooLQOGmSGhA--ludLn9gllH7bW7jxVd-d7y0S8HTD1NrY2nokbD'>Livros de Paulo Leminski</a>";
+    document.getElementById("Paulo-Links").innerHTML += "<br><br><a style='color: purple;' href='https://www.instagram.com/paulo_leminski_uni/'>Instagram do Projeto</a>";
+    document.getElementById("Paulo-Links").innerHTML += "<br><br><a style='color: green;' href='https://pt.wikipedia.org/wiki/Paulo_Leminski'>Wiki de Paulo Leminski</a>";
+    document.getElementById("Paulo-Links").innerHTML += "<br><br><a style='color: green;' href='https://brasilescola.uol.com.br/literatura/paulo-leminski.htm#Frases+de+Paulo+Leminski'>Frases de Paulo Leminski</a>";
+    document.getElementById("Paulo-Links").innerHTML += "<br><br><a style='color: green;' href='https://www.estadao.com.br/web-stories/cultura/literatura/paulo-leminski-6-livros-para-ler-nos-35-anos-da-morte-do-escritor/?srsltid=AfmBOooLQOGmSGhA--ludLn9gllH7bW7jxVd-d7y0S8HTD1NrY2nokbD'>Livros de Paulo Leminski</a>";
+    for (i=0;i < document.getElementById("Paulo-Videos").children.length;i++){
+        document.getElementById("Paulo-Videos").children.item(i).style.width = "92%";
+        document.getElementById("Paulo-Videos").children.item(i).style.height = "170px";
+        document.getElementById("Paulo-Videos").children.item(i).style.borderStyle = "inset";
+        document.getElementById("Paulo-Videos").children.item(i).style.borderWidth = "1px";
+        document.getElementById("Paulo-Videos").children.item(i).style.borderColor = "white";
+    }
+    document.getElementById("Paulo-Biografia").style.backgroundRepeat = "repeat-y";
+    document.getElementById("Paulo-Biografia").style.backgroundSize = "100%";
 }
