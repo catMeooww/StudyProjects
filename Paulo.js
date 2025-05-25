@@ -152,6 +152,7 @@ if (testMobile){
     document.getElementById("Paulo-Links").innerHTML += "<br><br><a style='color: green;' href='https://pt.wikipedia.org/wiki/Paulo_Leminski'>Wiki de Paulo Leminski</a>";
     document.getElementById("Paulo-Links").innerHTML += "<br><br><a style='color: green;' href='https://brasilescola.uol.com.br/literatura/paulo-leminski.htm#Frases+de+Paulo+Leminski'>Frases de Paulo Leminski</a>";
     document.getElementById("Paulo-Links").innerHTML += "<br><br><a style='color: green;' href='https://www.estadao.com.br/web-stories/cultura/literatura/paulo-leminski-6-livros-para-ler-nos-35-anos-da-morte-do-escritor/?srsltid=AfmBOooLQOGmSGhA--ludLn9gllH7bW7jxVd-d7y0S8HTD1NrY2nokbD'>Livros de Paulo Leminski</a>";
+    document.getElementById("Paulo-Documents").innerHTML = "<hr>";
     for (i=0;i < document.getElementById("Paulo-Videos").children.length;i++){
         document.getElementById("Paulo-Videos").children.item(i).style.width = "92%";
         document.getElementById("Paulo-Videos").children.item(i).style.height = "170px";
