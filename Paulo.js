@@ -39,6 +39,10 @@ Poemas = [
         "title":"o que te espera",
         "body":"você pára<br>a fim de ver<br>o que te espera<br><br>só uma nuvem<br>te separa<br>das estrelas"
     },
+    {
+        "title":"Já disse",
+        "body":"Já disse de nós.<br>Já disse de mim.<br>Já disse do mundo.<br>Já disse agora,<br>eu que já disse nunca. Todo mundo sabe,<br>eu já disse muito.<br><br>Tenho a impressão<br>que já disse tudo.<br>E tudo foi tão de repente..."
+    },
 ]
 
 function generatePoem(){
