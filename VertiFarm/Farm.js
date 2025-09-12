@@ -3,7 +3,7 @@ function loadBody(){
     if (testMobile){
         document.getElementById("project-showcaser").style.display = "block";
         document.getElementById("farmview").style.width = "100%";
-        document.getElementById("farmview").style.height = "150px";
+        document.getElementById("farmview").style.height = "170px";
         document.getElementById("farmdescript").style.width = "100%";
         document.getElementById("farmdescript").style.height = "300px";
         document.getElementById("menu").innerHTML = "<button onclick='mobileMenu()'>Mais</button>";
