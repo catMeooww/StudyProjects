@@ -3,7 +3,7 @@ function loadBody(){
     if (testMobile){
         document.getElementById("project-showcaser").style.display = "block";
         document.getElementById("farmview").style.width = "100%";
-        document.getElementById("farmview").style.height = "170px";
+        document.getElementById("farmview").style.height = "200px";
         document.getElementById("farmdescript").style.width = "100%";
         document.getElementById("farmdescript").style.height = "300px";
         document.getElementById("menu").innerHTML = "<button onclick='mobileMenu()'>Mais</button>";
@@ -31,6 +31,12 @@ function updateSlide(){
     text = slides["text"][slide];
     document.getElementById("viewimage").src = image;
     document.getElementById("farmdescript").innerHTML = text;
+
+    colorR = Math.floor(Math.random() * 255);
+    colorG = Math.floor(Math.random() * 255);
+    colorB = Math.floor(Math.random() * 255);
+
+    document.getElementById("viewimage").style.borderColor = "rgb(" + colorR + "," + colorG + "," + colorB + ")";
 }
 
 function nextslide(){

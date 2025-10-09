@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -85,6 +85,24 @@
             z-index: 5;
             margin-top: -20px;
         }
+
+        #viewimage {
+            border: 2px blue outset;
+        }
+
+        .table {
+            width: 49%;
+            border-left: 1px white solid;
+            border-right: 1px white solid;
+            display: inline-table;
+            height: 60%;
+        }
+
+        iframe {
+            border: 2px white outset;
+            width: 45%;
+            height: 300px;
+        }
     </style>
 </head>
 
@@ -93,7 +111,8 @@
         <a href="/VertiFarm/">Página Inicial</a>
         <a
             href="https://docs.google.com/document/d/1jCiAykNMrb5-mVNDbZW3jvAXNWw17NgQSs3xEMppY_Y/edit?usp=sharing">Pré-Projeto</a>
-        <a href="">Artigo</a>
+        <a href="/VertiFarm/article.html">Artigo</a>
+        <a href="/VertiFarm/model.html">Model</a>
     </div>
     <div id="body">
         <h1>Smart Vertical Farm</h1>
@@ -125,6 +144,67 @@
                 automáticamente o ambiente para se adequar as nescessidades das plantas.</p>
             <p>Esse modelo facilita o cuidado da fazenda, uma vez que a unica nescessidade é garantir energia para a IA
                 e abastecer os tanques de agua.</p>
+        </section>
+        <section>
+            <h2>Fazendas Verticais Hidropônicas X Solo</h2>
+            <div class="table">
+                <h3>Benefícios da versão com SOLO</h3>
+
+                <p>Mais simples de implantar: qualquer pessoa consegue começar.</p>
+
+                <p>Menor custo inicial (~R$ 500–600 mais barato).</p>
+
+                <p>Menor risco de perda total se uma bomba falhar (planta ainda sobrevive alguns dias com solo úmido).
+                </p>
+
+                <p>Mais tolerante a erros em pH, nutrientes ou falhas elétricas.</p>
+
+                <h3>Desvantagens do SOLO</h3>
+
+                <p>Menor controle sobre nutrientes (perda de eficiência).</p>
+
+                <p>Maior consumo de água em comparação com hidroponia.</p>
+
+                <p>Risco de pragas e fungos no solo.</p>
+
+                <p>Crescimento e produtividade mais lentos (~20–30% menor que hidroponia em média).</p>
+            </div>
+            <div class="table">
+                <h3>Benefícios da versão HIDROPÔNICA</h3>
+
+                <p>Produtividade maior (plantas crescem até 30–50% mais rápido).</p>
+
+                <p>Uso muito eficiente de água (até 90% menos que solo).</p>
+
+                <p>Controle fino de nutrientes (via pH/EC).</p>
+
+                <p>Sistema fechado → mais limpo, sem terra dentro de casa.</p>
+
+                <p>Melhor para projetos científicos/educacionais, já que permite automação e dados detalhados.</p>
+
+                <h3>Desvantagens da HIDROPÔNICA</h3>
+
+                <p>Custo inicial mais alto (~R$ 500 a mais que o solo).</p>
+
+                <p>Exige monitoramento constante de pH e condutividade.</p>
+
+                <p>Dependência elétrica: se a bomba parar, plantas sofrem em poucas horas.</p>
+
+                <p>Maior necessidade de conhecimento técnico (nutrientes, ajustes, manutenção).</p>
+            </div>
+            <p>Para o modelo acessível que estamos montando, o Solo pode ser melhor utilizado + IA para garantir a
+                segurança.</p>
+        </section>
+        <section>
+            <h2>Sobre Fazendas Verticais</h2>
+            <iframe width="695" height="391" src="https://www.youtube.com/embed/hdmINa1HEBg"
+                title="O que é uma fazenda vertical?" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="695" height="391" src="https://www.youtube.com/embed/fmPPJuW20Yw"
+                title="Soluções igus® em fazendas verticais do futuro!" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
     </div>
 </body>

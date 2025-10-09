@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Farm Project</title>
+    <script src="Farm.js"></script>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: url(../icons/bg-plants.png);
+            border: 5px outset blue;
+            text-align: center;
+            overflow-y: hidden;
+        }
+
+        #body {
+            width: 90%;
+            margin: 5%;
+            background-color: darkgreen;
+            color: white;
+            border: outset darkolivegreen 6px;
+        }
+
+        #menu {
+            background-color: rgba(0, 0, 0, 0.9);
+            border-bottom: rgb(29, 29, 29) 4px solid;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            z-index: 20;
+        }
+
+        #menu a,
+        #menu button {
+            margin: 5px;
+            padding: 5px;
+            color: aliceblue;
+            text-decoration: none;
+            border: outset 2px rgb(29, 29, 29);
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        #menu a:hover {
+            color: lime;
+            border-color: lime;
+        }
+
+        canvas {
+            width: 99%;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menu">
+        <a href="/VertiFarm/">Página Inicial</a>
+        <a
+            href="https://docs.google.com/document/d/1jCiAykNMrb5-mVNDbZW3jvAXNWw17NgQSs3xEMppY_Y/edit?usp=sharing">Pré-Projeto</a>
+        <a href="/VertiFarm/article.html">Artigo</a>
+        <a href="/VertiFarm/model.html">Model</a>
+    </div>
+    <center>
+        <div id="body"></div>
+    </center>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+        import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
+
+        let scene, camera, renderer, controls;
+
+        let width = window.innerWidth / 1.2;
+        let height = window.innerHeight / 1.2;
+
+        function init() {
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x222222);
+
+            camera = new THREE.PerspectiveCamera(
+                60,
+                width / height,
+                0.1,
+                1000
+            );
+            camera.position.set(-23, 290, -88);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(width, height);
+            document.getElementById("body").appendChild(renderer.domElement);
+
+            // Lights
+            const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+            scene.add(ambient);
+
+            const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+            dirLight.position.set(5, 10, 7);
+            scene.add(dirLight);
+
+            // Controls
+            controls = new OrbitControls(camera, renderer.domElement);
+            controls.target.set(0, 0, 0);
+            controls.update();
+
+            // Load MTL and OBJ
+            const mtlLoader = new MTLLoader();
+            mtlLoader.setPath('./');
+            mtlLoader.load('model.mtl', (materials) => {
+                materials.preload();
+
+                const objLoader = new OBJLoader();
+                objLoader.setMaterials(materials);
+                objLoader.setPath('./');
+                objLoader.load('model.obj', (object) => {
+                    object.scale.set(1, 1, 1);
+                    object.position.set(0, 0, 0);
+                    scene.add(object);
+                });
+            });
+
+            window.addEventListener('resize', onWindowResize, false);
+            animate();
+        }
+
+        function onWindowResize() {
+            width = window.innerWidth / 1.2;
+            height = window.innerHeight / 1.2;
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(width, height);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        init();
+    </script>
+</body>
+
+</html>
