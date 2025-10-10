@@ -65,7 +65,7 @@
     </style>
 </head>
 
-<body>
+<body onload="loadBody()">
     <div id="menu">
         <a href="./">Página Inicial</a>
         <a
@@ -98,7 +98,7 @@
                 0.1,
                 1000
             );
-            camera.position.set(-23, 290, -88);
+            camera.position.set(0, -300, 88);
 
             renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setSize(width, height);
