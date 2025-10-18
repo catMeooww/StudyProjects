@@ -1,0 +1,145 @@
+body {
+    background: url("https://img.freepik.com/vetores-gratis/fundo-hexagonal-realista_79603-1646.jpg");
+    background-position: center;
+    background-position-y: bottom;
+    background-size: cover;
+}
+
+#body {
+    color: white;
+    font-family: monospace;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 700px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#header {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    border-bottom: white 1px solid;
+}
+
+#header #slide {
+    text-align: center;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 3px outset rgba(34, 51, 31, 0.5);
+    padding: 3px;
+    color: white;
+    cursor: pointer;
+    margin: 15px;
+    width: 120px;
+}
+
+button:hover {
+    border-color: rgb(34, 51, 31);
+}
+
+#selected{
+    color: lime;
+    text-decoration: underline;
+}
+
+.premium, .organization{
+    visibility: hidden;
+    position: absolute;
+}
+
+#accountbtn {
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    display: flex;
+    top: 0;
+    right: 0;
+    position: absolute;
+    border-width: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0;
+    padding: 0;
+}
+
+#accountbtn img {
+    width: 40px;
+    border-radius: 40px;
+    background-color: white;
+    margin: 5px;
+    border: solid 3px lime;
+}
+
+#main {
+    width: 90%;
+    height: 430px;
+    margin-top: 150px;
+    margin-left: 5%;
+    border: 2px rgba(255, 255, 255, 0.2) outset;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow-y: auto;
+}
+
+#main h1{
+    text-decoration: overline underline;
+    letter-spacing: 2px;
+}
+
+.item{
+    background-color: black;
+    border: 1px white solid;
+    width: 80%;
+    justify-self: center;
+    padding: 5px;
+    margin: 10px;
+    text-align: justify;
+}
+
+.item img{
+    width: 15%;
+    display: inline-block;
+}
+
+.item div{
+    display: inline-block;
+    text-align: justify;
+    width: 84%;
+}
+
+.item label, .item a{
+    margin-right: 10px;
+}
+
+.item #title{
+    font-size: large;
+}
+
+.item i{
+    color: red;
+    float: right;
+    text-shadow: 1px 1px 1px red;
+}
+
+a{
+    color:lime;
+    text-decoration:dotted;
+}
+a:hover{
+    color: green;
+    text-decoration:underline;
+}
+
+.advertisement{
+    position: fixed;
+    bottom: 25px;
+    background-color: orange;
+    width: 90%;
+    height: 30px;
+}

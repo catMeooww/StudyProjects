@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champion Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+
+<body onload="loadData()">
+    <section id="body">
+        <div id="header">
+            <div id="general">
+                <button id="accountbtn" onclick="changeAccount()">
+                    <label>Conta</label>
+                    <img src="https://cdn-icons-png.flaticon.com/512/6522/6522516.png">
+                </button>
+                <h1>Champion Hub</h1>
+            </div>
+            <hr>
+            <div id="slide">
+                <button onclick="redirect(1)">Jogos Gravados</button>
+                <button onclick="redirect(2)">Ao Vivo</button>
+                <button onclick="redirect(3)">Inscrever-se</button>
+                <button onclick="redirect(4)">Apostas</button>
+                <button onclick="redirect(0)" id="selected" class="premium">Pos-Show</button>
+                <button onclick="redirect(5)">Mais</button>
+            </div>
+        </div>
+        <section id="main">
+            <h1>Após os Jogos</h1>
+            <section>
+                <div class="item organization" style="text-align: center;font-size: 15px;">
+                    <label>+</label><a>Programar Live</a>
+                </div>
+                <div class="item">
+                    <img src="video.png">
+                    <div id="data">
+                        <span id="title">
+                            <label>CAMPEONATO DE VALORANT</label>
+                        </span>
+                        <br><br>
+                        <span>
+                            <label>Players: 8</label>
+                            <label>Tipo: Review</label>
+                            <a>Ver Comentários</a>
+                            <a>Sobre o Jogo</a>
+                        </span>
+                        <br><br><br>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="video.png">
+                    <div id="data">
+                        <span id="title">
+                            <label>BEDWARS HYPIXEL MINECRAFT</label>
+                        </span>
+                        <br><br>
+                        <span>
+                            <label>Players: 12</label>
+                            <label>Tipo: Review</label>
+                            <a>Ver Comentários</a>
+                            <a>Sobre o Jogo</a>
+                        </span>
+                        <br><br><br>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="video.png">
+                    <div id="data">
+                        <span id="title">
+                            <label>CAMPEONATO DE VALORANT</label>
+                        </span>
+                        <br><br>
+                        <span>
+                            <label>Players: 8</label>
+                            <label>Tipo: Review</label>
+                            <a>Ver Comentários</a>
+                            <a>Sobre o Jogo</a>
+                        </span>
+                        <br><br><br>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="video.png">
+                    <div id="data">
+                        <span id="title">
+                            <label>BEDWARS MUSH MINECRAFT</label>
+                        </span>
+                        <br><br>
+                        <span>
+                            <label>Players: 8</label>
+                            <label>Tipo: Fofocas</label>
+                            <a>Ver Comentários</a>
+                            <a>Sobre o Jogo</a>
+                        </span>
+                        <br><br><br>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="video.png">
+                    <div id="data">
+                        <span id="title">
+                            <label>CAMPEONATO DE ROCKET LEAGUE</label>
+                        </span>
+                        <br><br>
+                        <span>
+                            <label>Players: 4</label>
+                            <label>Tipo: Review</label>
+                            <a>Ver Comentários</a>
+                            <a>Sobre o Jogo</a>
+                        </span>
+                        <br><br><br>
+                    </div>
+                </div>
+                <br><br>
+            </section>
+            <div class="advertisement">
+                //
+            </div>
+        </section>
+    </section>
+</body>
+
+</html>

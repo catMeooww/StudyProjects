@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champion Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+
+<body onload="loadData()">
+    <section id="body">
+        <div id="header">
+            <div id="general">
+                <button id="accountbtn" onclick="changeAccount()">
+                    <label>Conta</label>
+                    <img src="https://cdn-icons-png.flaticon.com/512/6522/6522516.png">
+                </button>
+                <h1>Champion Hub</h1>
+            </div>
+            <hr>
+            <div id="slide">
+                <button onclick="redirect(1)">Jogos Gravados</button>
+                <button onclick="redirect(2)">Ao Vivo</button>
+                <button onclick="redirect(3)">Inscrever-se</button>
+                <button onclick="redirect(0)" id="selected">Apostas</button>
+                <button onclick="redirect(6)" class="premium">Pos-Show</button>
+                <button onclick="redirect(5)">Mais</button>
+            </div>
+        </div>
+        <section id="main">
+            <h1>Resultados de Jogos e Apostas</h1>
+            <section>
+                <div class="item organization" style="text-align: center;font-size: 15px;">
+                    <label>+</label><a>Programar Live</a>
+                </div>
+                <div class="item">
+                    <img src="trophy.png">
+                    <div id="data">
+                        <span id="title">
+                            <label>CAMPEONATO DE ROCKET LEAGUE</label>
+                            <i>°</i>
+                        </span>
+                        <br><br>
+                        <span>
+                            <a>R$10</a>
+                            <a>R$50</a>
+                            <a>R$100</a>
+                            <a>R$1000</a>
+                        </span>
+                        <br><br><br>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="trophy.png">
+                    <div id="data">
+                        <span id="title">
+                            <label>CAMPEONATO DE VALORANT</label>
+                            <i>°</i>
+                        </span>
+                        <br><br>
+                        <span>
+                            <a>R$10</a>
+                            <a>R$50</a>
+                            <a>R$100</a>
+                            <a>R$1000</a>
+                        </span>
+                        <br><br><br>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="trophy.png">
+                    <div id="data">
+                        <span id="title">
+                            <label>BEDWARS HYPIXEL MINECRAFT</label>
+                            <i>°</i>
+                        </span>
+                        <br><br>
+                        <span>
+                            <a>R$10</a>
+                            <a>R$50</a>
+                            <a>R$100</a>
+                            <a>R$1000</a>
+                        </span>
+                        <br><br><br>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="trophy.png">
+                    <div id="data">
+                        <span id="title">
+                            <label>[Concluído] BEDWARS MUSH MINECRAFT</label>
+                        </span>
+                        <br><br>
+                        <span>
+                            <label>Players: 8</label>
+                            <label>Ganhador Jogo: Daniel</label>
+                            <label>Ganhador Apostas: Lucas</label>
+                            <a>Resultado: R$2500.50</a>
+                        </span>
+                        <br><br><br>
+                    </div>
+                </div>
+                <br><br>
+            </section>
+            <div class="advertisement">
+                COMPRE NA SHOPEE 11/11
+            </div>
+        </section>
+    </section>
+</body>
+
+</html>
