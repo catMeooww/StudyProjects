@@ -37,7 +37,7 @@ slides = {
 }
 
 function updateSlide() {
-    image = "../icons/" + slides["images"][slide];
+    image = "./" + slides["images"][slide];
     text = slides["text"][slide];
     document.getElementById("viewimage").src = image;
     document.getElementById("farmdescript").innerHTML = text;
@@ -67,7 +67,7 @@ function backslide() {
 
 function mobileMenu() {
     document.getElementById("menu").style.height = "100%";
-    document.getElementById("menu").innerHTML = '<button onclick="closeMenu()">Fechar</button><br><br><br><a href="./">Página Inicial</a><br><br><br><a href="https://docs.google.com/document/d/1jCiAykNMrb5-mVNDbZW3jvAXNWw17NgQSs3xEMppY_Y/edit?usp=sharing">Pré-Projeto</a><br><br><br><a href="">Artigo</a><br><br><br><a href="./model.html">Model</a><br><br><br>';
+    document.getElementById("menu").innerHTML = '<button onclick="closeMenu()">Fechar</button><br><br><br><a href="./">Página Inicial</a><br><br><br><a href="https://docs.google.com/document/d/1jCiAykNMrb5-mVNDbZW3jvAXNWw17NgQSs3xEMppY_Y/edit?usp=sharing">Pré-Projeto</a><br><br><br><a href="">Artigo</a><br><br><br><a href="./model.html">Model</a><br><br><br><a href="./extra.html">Outros</a><br><br><br>';
 }
 
 function closeMenu() {
