@@ -103,10 +103,32 @@
             min-width: 48%;
             height: 500px;
         }
+
+        #plants {
+            background-color: white;
+            border: 2px blue outset;
+            width: 60%;
+            margin-left: 20%;
+        }
+
+        #plants div {
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        #plantShow {
+            height: 400px;
+            color: black;
+            background-color: antiquewhite;
+        }
+
+        #plantShow label {
+            font-weight: bolder;
+        }
     </style>
 </head>
 
-<body onload="loadBody('index')">
+<body onload="loadBody('extra')">
     <div id="menu">
         <a href="./">Página Inicial</a>
         <a
@@ -116,11 +138,29 @@
         <a href="./extra.html">Outros</a>
     </div>
     <div id="body">
-        <h1>Projetos Hidropônicos</h1>
-        <iframe src="https://www.archdaily.com.br/br/1014322/fazenda-vertical-beijing-van-bergen-kolpa-architects"></iframe>
-        <iframe src="https://www.ultimationinc.com/wp-content/uploads/2022/03/Advantages-of-Vertical-Farming.jpg"></iframe>
-        <h1>Materiais</h1>
-        <iframe width="1000" src="Fazenda_Vertical_Recursos.pdf"></iframe>
+        <div id="plants">
+            <div>
+                <button onclick="plant('alface')">🥬</button>
+                <button onclick="plant('morango')">🍓</button>
+                <button onclick="plant('tomate')">🍅</button>
+                <button onclick="plant('hortelã')">🌿</button>
+                <button onclick="plant('cebolinha')">🧅</button>
+            </div>
+            <div id="plantShow">
+                Selecione Uma Planta
+            </div>
+            <a href="Fazenda_Vertical_Plantas.pdf">Ver Mais</a>
+        </div>
+        <div id="others">
+            <h1>Projetos Hidropônicos</h1>
+            <iframe
+                src="https://www.archdaily.com.br/br/1014322/fazenda-vertical-beijing-van-bergen-kolpa-architects"></iframe>
+            <iframe
+                src="https://www.ultimationinc.com/wp-content/uploads/2022/03/Advantages-of-Vertical-Farming.jpg"></iframe>
+            <h1>Materiais</h1>
+            <iframe width="1000" src="Fazenda_Vertical_Recursos.pdf"></iframe>
+            <iframe width="1000" src="Fazenda_Vertical_Plantas.pdf"></iframe>
+        </div>
     </div>
 </body>
 

@@ -103,6 +103,41 @@
             width: 45%;
             height: 300px;
         }
+
+        #plants {
+            background-color: white;
+            border: 2px blue outset;
+            width: 60%;
+            margin-left: 20%;
+        }
+
+        #plants div {
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        #plants button{
+            background-color: aliceblue;
+            margin: 3px;
+            padding: 2px;
+            box-shadow: 2px 2px 2px green;
+            cursor: pointer;
+        }
+
+        #plants button:hover{
+            box-shadow: 1px 1px 1px green;
+            border-color: limegreen;
+        }
+
+        #plantShow {
+            height: 400px;
+            color: black;
+            background-color: antiquewhite;
+        }
+
+        #plantShow label {
+            font-weight: bolder;
+        }
     </style>
 </head>
 
@@ -137,6 +172,7 @@
                 em camadas
                 verticais empilhadas, geralmente dentro de um ambiente controlado, como um edifício em centros urbanos.
             </p>
+            <p>As plantas possuem iluminação, umidade, pH e até temperatura controlada para maximizar o cultivo!</p>
             <p>Esta técnica é útil por ser mais eficiente e compacta, o sistema permite cidades mais sustentáveis, e
                 inclusive, com a adição da IA, pode tornar possível qualquer um ter uma mini fazenda em casa.</p>
             <h1>Fazenda Smart</h1>
@@ -208,6 +244,20 @@
                 title="Soluções igus® em fazendas verticais do futuro!" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section>
+            <div id="plants">
+                <div>
+                    <button onclick="plant('alface')">🥬</button>
+                    <button onclick="plant('morango')">🍓</button>
+                    <button onclick="plant('tomate')">🍅</button>
+                    <button onclick="plant('hortelã')">🌿</button>
+                    <button onclick="plant('cebolinha')">🧅</button>
+                </div>
+                <div id="plantShow">
+                    Selecione Uma Planta
+                </div>
+            </div>
         </section>
     </div>
 </body>
