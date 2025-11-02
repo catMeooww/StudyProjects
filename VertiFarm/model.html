@@ -21,7 +21,6 @@
             background: url(./bg-plants.png);
             border: 5px outset blue;
             text-align: center;
-            overflow-y: hidden;
         }
 
         #body {
@@ -59,10 +58,30 @@
         }
 
         canvas {
-            width: 99%;
+            width: 100%;
             height: 500px;
         }
+
+        section{
+            border: blue solid 2px;
+        }
+
+        #switch button{
+            width: 45%;
+            margin: 2%;
+            padding: 1%;
+            font-size: large;
+            background-color: rgb(24, 24, 24);
+            text-shadow: 1px 1px 1px white;
+            border: 2px black outset;
+            cursor: pointer;
+        }
     </style>
+    <script>
+        function changeModel(m) {
+            window.location = "./model.html?" + m;
+        }
+    </script>
 </head>
 
 <body onload="loadBody()">
@@ -71,11 +90,17 @@
         <a
             href="https://docs.google.com/document/d/1jCiAykNMrb5-mVNDbZW3jvAXNWw17NgQSs3xEMppY_Y/edit?usp=sharing">Pré-Projeto</a>
         <a href="./article.html">Artigo</a>
-        <a href="./model.html">Model</a>
+        <a href="./model.html?1">Model</a>
         <a href="./extra.html">Outros</a>
     </div>
     <center>
-        <div id="body"></div>
+        <div id="body">
+            <section id="frame"></section>
+            <section id="switch">
+                <button onclick="changeModel('1')">🥦</button>
+                <button onclick="changeModel('2')">🏙️</button>
+            </section>
+        </div>
     </center>
 
     <script type="module">
@@ -85,11 +110,15 @@
         import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
 
         let scene, camera, renderer, controls;
+        if (/iPhone|Android|iPad/i.test(navigator.userAgent)){
+            var width = window.innerWidth / 1.2;
+            var height = window.innerHeight / 1.3;
+        }else{
+            var width = window.innerWidth / 1.15;
+            var height = window.innerHeight / 1.2;
+        }
 
-        let width = window.innerWidth / 1.2;
-        let height = window.innerHeight / 1.2;
-
-        function init() {
+        function init(model) {
             scene = new THREE.Scene();
             scene.background = new THREE.Color(0x222222);
 
@@ -103,7 +132,7 @@
 
             renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setSize(width, height);
-            document.getElementById("body").appendChild(renderer.domElement);
+            document.getElementById("frame").appendChild(renderer.domElement);
 
             // Lights
             const ambient = new THREE.AmbientLight(0xffffff, 0.6);
@@ -120,14 +149,14 @@
 
             // Load MTL and OBJ
             const mtlLoader = new MTLLoader();
-            mtlLoader.setPath('./');
-            mtlLoader.load('model.mtl', (materials) => {
+            mtlLoader.setPath('./farm_models/');
+            mtlLoader.load(model + '.mtl', (materials) => {
                 materials.preload();
 
                 const objLoader = new OBJLoader();
                 objLoader.setMaterials(materials);
-                objLoader.setPath('./');
-                objLoader.load('model.obj', (object) => {
+                objLoader.setPath('./farm_models/');
+                objLoader.load(model + '.obj', (object) => {
                     object.scale.set(1, 1, 1);
                     object.position.set(0, 0, 0);
                     scene.add(object);
@@ -152,7 +181,19 @@
             renderer.render(scene, camera);
         }
 
-        init();
+        let url = window.location.href
+        url = url.split("?")
+        if (url.length == 2) {
+            if (url[1] == "2") {
+                var file = "city";
+            } else {
+                var file = "farm";
+            }
+        } else {
+            var file = "farm";
+        }
+
+        init(file);
     </script>
 </body>
 
