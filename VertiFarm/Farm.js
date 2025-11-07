@@ -26,7 +26,7 @@ function loadBody(b) {
             document.getElementById("others").style.borderColor = "black";
             document.getElementById("others").style.borderStyle = "double";
             document.getElementById("others").style.marginTop = "5%";
-            document.getElementById("others").innerHTML = "<a href='https://www.archdaily.com.br/br/1014322/fazenda-vertical-beijing-van-bergen-kolpa-architects'>Exemplo de Projeto Urbano</a><br><a href='https://www.ultimationinc.com/wp-content/uploads/2022/03/Advantages-of-Vertical-Farming.jpg'>Prédio</a><br><a href='Fazenda_Vertical_Recursos.pdf'>Recursos</a>";
+            document.getElementById("others").innerHTML = "<a href='https://www.archdaily.com.br/br/1014322/fazenda-vertical-beijing-van-bergen-kolpa-architects'>Exemplo de Projeto Urbano</a><br><a href='https://www.ultimationinc.com/wp-content/uploads/2022/03/Advantages-of-Vertical-Farming.jpg'>Prédio</a><br><a href='Fazenda_Vertical_Recursos.pdf'>Recursos</a><br><a href='FARM - Banner.png'>Banner</a>";
         }
     }
 }
