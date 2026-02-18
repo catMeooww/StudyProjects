@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Projects</title>
+    <style>
+        body {
+            background: url(background.png);
+            background-position: center;
+            background-size: cover;
+            align-content: center;
+        }
+
+        #front div {
+            padding: 5px;
+            margin: 4%;
+            width: 90%;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px outset black;
+            text-align: center;
+            color: aliceblue;
+        }
+
+        #list {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px outset black;
+            height: 500px;
+            overflow-y: scroll;
+            width: 90%;
+        }
+
+        #list div {
+            background-color: rgba(255, 255, 255, 0.6);
+            color: black;
+            border: solid 2px black;
+            padding: 2px;
+            width: 95%;
+            margin: 1%;
+            cursor: pointer;
+        }
+
+        button{
+            color: aqua;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <section id="front">
+            <br><br>
+            <hr>
+            <br><br>
+            <div>
+                <h1>Projects made for studying</h1>
+            </div>
+            <br>
+            <div>
+                <p>Lista de projetos feitos com finalidade de estudos (;</p>
+            </div>
+            <br><br>
+            <hr>
+            <br><br>
+        </section>
+        <br><br>
+        <div style="color:white;background-color: rgba(0, 0, 0, 0.6);width: 90%;">
+            <button id='listbtn' onclick="toggleList()">↑</button>
+            <button onclick="colorize()">↻</button>
+            <label>Project List</label>
+        </div>
+        <section id="list">
+            <div id="p-vertifarm" onclick="redirect(1)" onmouseenter="bright(this.id)" onmouseleave="unbright(this.id)">
+                <h2>Smart Vertical Farm</h2>
+                <p>Projeto para criar uma fazenda vertical autosustentável com IA na feira de ciências</p>
+                <progress value="100" max="100"></progress>
+            </div>
+            <div id="p-championhub" onclick="redirect(2)" onmouseenter="bright(this.id)"
+                onmouseleave="unbright(this.id)">
+                <h2>Champion Hub</h2>
+                <p>Simulação de empresa para transmissão de jogos on-line</p>
+                <progress value="90" max="100"></progress>
+            </div>
+            <div id="p-leminski" onclick="redirect(3)" onmouseenter="bright(this.id)" onmouseleave="unbright(this.id)">
+                <h2>Eleição Leminski</h2>
+                <p>Campanha de eleições literárias: Paulo Leminski</p>
+                <progress value="100" max="100"></progress>
+            </div>
+            <div id="p-igapo" onclick="redirect(4)" onmouseenter="bright(this.id)" onmouseleave="unbright(this.id)">
+                <h2>Revitalização do Lago Igapó</h2>
+                <p>Apresentação de Projeto para revitalização do lago Igapó</p>
+                <progress value="1" max="100"></progress>
+            </div>
+            <div id="p-color" onclick="redirect(5)" onmouseenter="bright(this.id)" onmouseleave="unbright(this.id)">
+                <h2>Calcular Cores RGBA</h2>
+                <p>Calcular resultado de sobreposição de cores com ALPHA</p>
+                <progress value="100" max="100"></progress>
+            </div>
+        </section>
+        <br><br><br><br>
+    </center>
+    <script>
+        function redirect(to) {
+            switch (to) {
+                case 1:
+                    location = "./VertiFarm";
+                    break;
+                case 2:
+                    location = "./ChampionBussiness";
+                    break;
+                case 3:
+                    location = "./PauloLeminski";
+                    break;
+                case 4:
+                    location = "./IgapoLake";
+                    break;
+                case 5:
+                    location = "./colorcalculation";
+                    break;
+                default:
+                    location.reload();
+            }
+        }
+
+        function toggleList() {
+            if (document.getElementById("list").style.visibility == "hidden") {
+                document.getElementById("list").style.visibility = "visible";
+                document.getElementById("listbtn").innerHTML = "↑";
+            } else {
+                document.getElementById("list").style.visibility = "hidden";
+                document.getElementById("listbtn").innerHTML = "↓";
+            }
+        }
+
+        function bright(id) {
+            document.getElementById(id).style.backgroundColor = "white";
+            r = Math.floor(Math.random() * 255);
+            g = Math.floor(Math.random() * 255);
+            b = Math.floor(Math.random() * 255);
+            document.getElementById(id).style.borderColor = "rgb(" + r + "," + g + "," + b + ")";
+        }
+
+        function unbright(id) {
+            document.getElementById(id).style.backgroundColor = "rgba(255,255,255,0.6)";
+            document.getElementById(id).style.borderColor = "black";
+        }
+
+        function colorize() {
+            for (e = 0; e < document.getElementsByTagName("progress").length; e++) {
+                r = Math.floor(Math.random() * 255);
+                g = Math.floor(Math.random() * 255);
+                b = Math.floor(Math.random() * 255);
+                document.getElementsByTagName("progress").item(e).style.accentColor = "rgb(" + r + "," + g + "," + b + ")";
+                document.getElementsByTagName("h2").item(e).style.textShadow = "2px 2px 2px rgb(" + r + "," + g + "," + b + ")";
+            }
+        }
+        colorize();
+    </script>
+</body>
+
+</html>
