@@ -1,0 +1,38 @@
+body {
+    background-color: cornflowerblue;
+    border: outset 2px cadetblue;
+    text-align: center;
+    color: white;
+}
+
+.menu {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: rgba(0, 255, 255, 0.8);
+    border-bottom: 2px solid blue;
+}
+
+h1 {
+    text-shadow: 3px 3px 3px lime;
+    padding: 20px;
+}
+
+.logo {
+    background: url(https://media-cdn.tripadvisor.com/media/photo-s/11/c9/33/68/lago-igapo-ii-londrina.jpg);
+    background-size: cover;
+    background-position: 0;
+}
+
+.logo p {
+    color: aliceblue;
+    font-size: 18px;
+    width: 60%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.logo hr {
+    border-color: rgba(0, 255, 255, 0.5);
+}

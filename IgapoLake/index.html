@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revitalização do Lago Igapó</title>
+    <link rel="stylesheet" href="lake.css">
 </head>
+
 <body>
-    <h1>Projeto de Revitalização do Lago Igapó</h1>
+    <div class="menu">
+        <button onclick="redirect(0)">Inicio</button>
+        <button onclick="redirect(1)">Projetos</button>
+        <button onclick="redirect(2)">Assinar</button>
+    </div>
+    <section class="logo">
+        <center>
+            <h1>Projeto de Revitalização do Lago Igapó</h1>
+            <br>
+            <hr><br><br>
+            <p>Lago Igapó, localizado próximo a Gleba Palhano, é um importante centro turistico de Londrina, porém não
+                tem recebido muita atenção recentemente</p>
+            <br>
+            <hr><br><br>
+            <p>É necessário uma reforma que deixe o lago atraente novamente.</p>
+            <br>
+            <hr><br><br><br><br><br>
+        </center>
+    </section>
+    <section class="body">
+        <h1>Sobre o lago</h1>
+        <hr>
+        <p>O Lago Igapó, chamado de Parque Linear do Igapó, é um conjunto de lagos diferentes, sendo o mais conhecido o
+            Igapó II.</p>
+        <p>Por sua proximidade com a Gleba Palhano, o lago é um lugar muito frequentado em Londrina, principalmente
+            durante eventos como Natal e Ano Novo, quando estruturas festivas são montadas.</p>
+        <p>Entretanto, o Lago está sem reformas há um bom tempo, há pontes interditadas, casos de contaminação da agua,
+            entre outros problemas. E por ser um ponto turístico, isso deveria mudar.</p>
+        <br><br>
+        <h1>O Projeto</h1>
+        <hr>
+        <p>Para resolver isso, seria necessário uma reforma em que fosse substituidas as pontes quebradas e também
+            recebesse melhorias de infrestrutura visando o turismo e a econômia</p>
+        <p>Melhorias nas pistas de caminhada seria um bom avanço, além de melhor iluminação, considerando que há
+            diversas partes sem nenhuma lâmpada ou com lâmpadas defeituosas.</p>
+        <p>Além de melhorias no já existente, aprimorar a area com mais atrativos seria muito bom para os moradores e
+            para a econômia em geral</p>
+        <p>Pense por exemplo em oferecer passeios na natureza como arborismo e até mesmo tirolesa sobre o lago. Areas
+            para tirar fotos. E até mesmo uma Ilha com fins Gastronômicos.</p>
+        <p>Além de chamar atenção de turistas, tais atrativos impulsionam a econômia da cidade, o que é de extrema
+            importância ultimamente.</p>
+        <br><br>
+        <h1>Mais detalhes</h1>
+        <hr>
+        <p>Veja mais detalhes na seção <a href="example.html">Projetos</a></p>
+        <p>Se gostou deixe sua <a href="register.html">Assinatura</a></p>
+    </section>
+    <script>
+        function redirect(to) {
+            if (to == 0) {
+                window.location = "./";
+            } else if (to == 1) {
+                window.location = "./example.html";
+            } else if (to == 2) {
+                window.location = "./register.html";
+            }
+        }
+    </script>
 </body>
+
 </html>

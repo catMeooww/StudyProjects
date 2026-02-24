@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revitalização do Lago Igapó</title>
+    <link rel="stylesheet" href="lake.css">
+</head>
+<body>
+    <div class="menu">
+        <button onclick="redirect(0)">Inicio</button>
+        <button onclick="redirect(1)">Projetos</button>
+        <button onclick="redirect(2)">Assinar</button>
+    </div>
+    <script>
+        function redirect(to) {
+            if (to == 0) {
+                window.location = "./";
+            } else if (to == 1) {
+                window.location = "./example.html";
+            } else if (to == 2) {
+                window.location = "./register.html";
+            }
+        }
+    </script>
+</body>
+</html>

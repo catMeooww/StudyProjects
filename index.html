@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Projects</title>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+    <script src="datascript.js"></script>
     <style>
         body {
             background: url(background.png);
             background-position: center;
             background-size: cover;
-            align-content: center;
         }
 
         #front div {
@@ -41,7 +43,52 @@
             cursor: pointer;
         }
 
-        button{
+        #user,
+        #chat {
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.6);
+            align-items: center;
+            justify-items: center;
+        }
+
+        #chat {
+            top: 2px;
+            right: 2px;
+            width: 50px;
+            height: 50px;
+        }
+
+        #chatbody {
+            visibility: hidden;
+        }
+
+        #user{
+            top: 2px;
+            left: 5%;
+            width: 90%;
+            height: 90%;
+            visibility: hidden;
+        }
+
+        #chatout {
+            height: 300px;
+            overflow-y: scroll;
+            margin: 10px;
+        }
+
+        #chat p{
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.6);
+            padding: 5px;
+        }
+
+        #chat p:hover{
+            color: rgb(255, 255, 255);
+            border-top: 1px solid rgb(255, 255, 255);
+            padding: 7px;
+        }
+
+        button {
             color: aqua;
             background-color: green;
         }
@@ -50,6 +97,17 @@
 
 <body>
     <center>
+        <div id="user">
+            <input placeholder="username" id="student">
+            <button onclick="login()">Log-In</button>
+        </div>
+        <div id="chat">
+            <button onclick="showChat()">💬</button>
+            <section id="chatbody">
+                <div id="chatout"></div>
+                <input id="chatin" type="text"><button onclick="chat()">Send</button>
+            </section>
+        </div>
         <section id="front">
             <br><br>
             <hr>
@@ -91,7 +149,7 @@
             <div id="p-igapo" onclick="redirect(4)" onmouseenter="bright(this.id)" onmouseleave="unbright(this.id)">
                 <h2>Revitalização do Lago Igapó</h2>
                 <p>Apresentação de Projeto para revitalização do lago Igapó</p>
-                <progress value="1" max="100"></progress>
+                <progress value="10" max="100"></progress>
             </div>
             <div id="p-color" onclick="redirect(5)" onmouseenter="bright(this.id)" onmouseleave="unbright(this.id)">
                 <h2>Calcular Cores RGBA</h2>
@@ -157,6 +215,39 @@
             }
         }
         colorize();
+
+        function showChat() {
+            if (user) {
+                if (document.getElementById("chatbody").style.visibility == "visible") {
+                    document.getElementById("chatbody").style.visibility = "hidden";
+                    document.getElementById("chat").style.width = "50px";
+                    document.getElementById("chat").style.height = "50px";
+                } else {
+                    document.getElementById("chatbody").style.visibility = "visible";
+                    document.getElementById("chat").style.width = "45%";
+                    document.getElementById("chat").style.height = "95%";
+                    firebase.database().ref("/chat/").on('value', function (snapshot) {
+                        document.getElementById("chatout").innerHTML = "<label>Chats</label>";
+                        snapshot.forEach(function (childSnapshot) {
+                            childKey = childSnapshot.key; childData = childSnapshot.val();
+                            messagesender = childData["by"];
+                            messagetxt = childData["text"];
+                            document.getElementById("chatout").innerHTML += "<p>[" + messagesender + "] " + messagetxt + "</p>";
+                        });
+                    })
+                }
+            } else {
+                document.getElementById("user").style.visibility = "visible";
+            }
+        }
+
+        function chat() {
+            firebase.database().ref("/chat/").push({
+                by: user,
+                text: document.getElementById("chatin").value
+            });
+            document.getElementById("chatin").value = "";
+        }
     </script>
 </body>
 
