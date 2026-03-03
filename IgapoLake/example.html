@@ -5,23 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revitalização do Lago Igapó</title>
     <link rel="stylesheet" href="lake.css">
+    <link rel="shortcut icon" href="lake.png" type="image/png">
 </head>
 <body>
-    <div class="menu">
-        <button onclick="redirect(0)">Inicio</button>
-        <button onclick="redirect(1)">Projetos</button>
-        <button onclick="redirect(2)">Assinar</button>
-    </div>
-    <script>
-        function redirect(to) {
-            if (to == 0) {
-                window.location = "./";
-            } else if (to == 1) {
-                window.location = "./example.html";
-            } else if (to == 2) {
-                window.location = "./register.html";
-            }
-        }
-    </script>
+    <section class="menu">
+        <button onclick="toggleUi()" style="float: left;" id="toggle-btn">←</button>
+        <div class="toggable-ui">
+            <button onclick="redirect(0)">Inicio</button>
+            <button onclick="redirect(1)">Projetos</button>
+            <button onclick="redirect(2)">Assinar</button>
+        </div>
+    </section>
+    <section class="body">
+        <h1>Exemplos de Projeto</h1>
+    </section>
+    <script src="lake.js"></script>
 </body>
 </html>

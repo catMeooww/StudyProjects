@@ -6,30 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revitalização do Lago Igapó</title>
     <link rel="stylesheet" href="lake.css">
+    <link rel="shortcut icon" href="lake.png" type="image/png">
+    <style>
+        #comments {
+            width: 80%;
+            height: 200px;
+            border: 2px darkslateblue outset;
+            justify-self: center;
+            padding: 20px;
+        }
+
+        #comments p {
+            width: 80%;
+            justify-self: center;
+            height: 120px;
+        }
+
+        #comments h3 {
+            margin-top: 0px;
+            padding-top: 0px;
+            border-bottom: 1px solid darkslateblue;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+
+        #comments button {
+            float: right;
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+        }
+
+        #comments label {
+            float: right;
+            color: grey;
+        }
+    </style>
 </head>
 
-<body>
-    <div class="menu">
-        <button onclick="redirect(0)">Inicio</button>
-        <button onclick="redirect(1)">Projetos</button>
-        <button onclick="redirect(2)">Assinar</button>
-    </div>
+<body onload="changeComment()">
+    <section class="menu">
+        <button onclick="toggleUi()" style="float: left;" id="toggle-btn">←</button>
+        <div class="toggable-ui">
+            <button onclick="redirect(0)">Inicio</button>
+            <button onclick="redirect(1)">Projetos</button>
+            <button onclick="redirect(2)">Assinar</button>
+        </div>
+    </section>
     <section class="logo">
         <center>
-            <h1>Projeto de Revitalização do Lago Igapó</h1>
             <br>
-            <hr><br><br>
-            <p>Lago Igapó, localizado próximo a Gleba Palhano, é um importante centro turistico de Londrina, porém não
+            <h1 class="toggable-ui">Projeto de Revitalização do Lago Igapó</h1>
+            <br>
+            <hr class="toggable-ui">
+            <br>
+            <p class="toggable-ui">Lago Igapó, localizado próximo a Gleba Palhano, é um importante centro turistico de
+                Londrina, porém não
                 tem recebido muita atenção recentemente</p>
             <br>
-            <hr><br><br>
-            <p>É necessário uma reforma que deixe o lago atraente novamente.</p>
-            <br>
-            <hr><br><br><br><br><br>
+            <hr class="toggable-ui">
+            <br><br>
+            <p class="toggable-ui">É necessário uma reforma que deixe o lago atraente novamente.</p>
+            <br><br>
+            <hr class="toggable-ui">
+            <h4 id="logo-footer">Veja o projeto para revitalização do lago aqui!</h4>
         </center>
     </section>
     <section class="body">
-        <h1>Sobre o lago</h1>
+        <h1 style="margin-top: 0px;">Sobre o lago</h1>
         <hr>
         <p>O Lago Igapó, chamado de Parque Linear do Igapó, é um conjunto de lagos diferentes, sendo o mais conhecido o
             Igapó II.</p>
@@ -37,6 +80,14 @@
             durante eventos como Natal e Ano Novo, quando estruturas festivas são montadas.</p>
         <p>Entretanto, o Lago está sem reformas há um bom tempo, há pontes interditadas, casos de contaminação da agua,
             entre outros problemas. E por ser um ponto turístico, isso deveria mudar.</p>
+        <br><br>
+        <h1>Importância do Lago</h1>
+        <hr>
+        <div id="comments">
+            <h3>Comentários sobre o Lago <button onclick="changeComment()">→</button></h3>
+            <p id="comment"></p>
+            <label>De sites/blogs sobre Londrina na Internet</label>
+        </div>
         <br><br>
         <h1>O Projeto</h1>
         <hr>
@@ -56,15 +107,22 @@
         <p>Veja mais detalhes na seção <a href="example.html">Projetos</a></p>
         <p>Se gostou deixe sua <a href="register.html">Assinatura</a></p>
     </section>
+    <script src="lake.js"></script>
     <script>
-        function redirect(to) {
-            if (to == 0) {
-                window.location = "./";
-            } else if (to == 1) {
-                window.location = "./example.html";
-            } else if (to == 2) {
-                window.location = "./register.html";
-            }
+        comments = [
+            "Local muito bonito, bem preservado. Ideal para caminhada ou simplesmente relaxar na natureza.",
+            "Ótimo para caminhadas, ambiente agradável e seguro. Muitas pessoas também fazendo caminhada, outras atividades esportivas.",
+            "Local de referência na cidade, pareceu me o queridinho dos moradores locais, e não é por menos . Decoração de Natal magnífica e de dia aproveitamos bem o seu redor para praticar nossa caminhada.",
+            "Principal cartão-postal da cidade com seus 4,5 quilômetros de extensão, complexo de quatro lagos sintetiza a abundância de cursos hídricos.",
+            "O lago Igapó é o lugar mais bonito de Londrina."
+        ]
+        function changeComment() {
+            selectedComment = Math.floor(Math.random() * comments.length);
+            document.getElementById("comment").innerHTML = '"' + comments[selectedComment] + '"';
+            r = Math.floor(Math.random() * 220);
+            g = Math.floor(Math.random() * 220);
+            b = Math.floor(Math.random() * 220);
+            document.getElementById("comments").style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
         }
     </script>
 </body>

@@ -1,27 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revitalização do Lago Igapó</title>
     <link rel="stylesheet" href="lake.css">
+    <link rel="shortcut icon" href="lake.png" type="image/png">
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+    <script src="../datascript.js"></script>
+    <style>
+        #outdiv {
+            width: 90%;
+            height: 400px;
+            background-color: white;
+            justify-self: center;
+            color: black;
+            border: 2px outset black;
+            text-align: left;
+            padding: 4px;
+            overflow-y: scroll;
+        }
+
+        #adddiv {
+            width: 90%;
+            background-color: white;
+            justify-self: center;
+            color: black;
+            border: 2px solid black;
+            text-align: left;
+            padding: 4px;
+        }
+
+        #adddiv button {
+            background-color: rgba(0, 0, 0, 0);
+            float: right;
+        }
+
+        #outdiv p{
+            border-bottom: 1px solid black;
+        }
+    </style>
 </head>
-<body>
-    <div class="menu">
-        <button onclick="redirect(0)">Inicio</button>
-        <button onclick="redirect(1)">Projetos</button>
-        <button onclick="redirect(2)">Assinar</button>
-    </div>
+
+<body onload="loadRegisters()">
+    <section class="menu">
+        <button onclick="toggleUi()" style="float: left;" id="toggle-btn">←</button>
+        <div class="toggable-ui">
+            <button onclick="redirect(0)">Inicio</button>
+            <button onclick="redirect(1)">Projetos</button>
+            <button onclick="redirect(2)">Assinar</button>
+        </div>
+    </section>
+    <section class="body">
+        <h1>Ajude o projeto adicionando uma Assinatura</h1>
+        <div id="outdiv"></div>
+        <div id="adddiv" class="toggable-ui"></div>
+        <br><br>
+    </section>
+    <script src="lake.js"></script>
     <script>
-        function redirect(to) {
-            if (to == 0) {
-                window.location = "./";
-            } else if (to == 1) {
-                window.location = "./example.html";
-            } else if (to == 2) {
-                window.location = "./register.html";
+        function loadRegisters() {
+            if (user && user != "") {
+                document.getElementById("adddiv").innerHTML = "<label>Assinando como: " + user + " </label>";
+                document.getElementById("adddiv").innerHTML += "<button onclick='register()'>Assinar</button>";
+            } else {
+                document.getElementById("adddiv").innerHTML = "<label>Faça login para assinar</label>";
+                document.getElementById("adddiv").innerHTML += "<button onclick='login()'>Log-In</button>";
             }
+            firebase.database().ref("/lake/").on('value', function (snapshot) {
+                document.getElementById("outdiv").innerHTML = "<p style='text-align:center'>Assinaturas</p>";
+                snapshot.forEach(function (childSnapshot) {
+                    childKey = childSnapshot.key; childData = childSnapshot.val();
+                    document.getElementById("outdiv").innerHTML += "<p>[" + childData + "] " + childKey + "</p>";
+                });
+            })
+        }
+        function login() {
+            window.location = "../";
+        }
+        function register() {
+            firebase.database().ref("/lake/").update({
+                [user]: new Date().toLocaleDateString()
+            });
         }
     </script>
 </body>
+
 </html>

@@ -1,8 +1,13 @@
 body {
-    background-color: cornflowerblue;
-    border: outset 2px cadetblue;
+    background-color: darkblue;
+    border: outset 2px aqua;
     text-align: center;
     color: white;
+}
+
+.body {
+    background-color: cornflowerblue;
+    padding: 2px;
 }
 
 .menu {
@@ -10,8 +15,31 @@ body {
     top: 0px;
     left: 0px;
     width: 100%;
-    background-color: rgba(0, 255, 255, 0.8);
+    background-color: rgba(0, 90, 100, 0.9);
     border-bottom: 2px solid blue;
+    padding: 2px;
+    max-height: 30px;
+    transition: 1.5s;
+}
+
+.menu button {
+    background-color: cadetblue;
+    border: 2px outset blue;
+    color: aliceblue;
+    padding: 5px;
+    width: 60px;
+    margin-left: 5px;
+}
+
+.menu button:hover {
+    background-color: cornflowerblue;
+    border: 2px outset aquamarine;
+    color: white;
+    cursor: pointer;
+}
+
+.toggable-ui{
+    transition: 1s;
 }
 
 h1 {
@@ -31,6 +59,12 @@ h1 {
     width: 60%;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+#logo-footer {
+    padding: 16px;
+    margin-bottom: 0px;
+    background: linear-gradient(rgba(0, 0, 0, 0.200), rgba(0, 0, 0, 0.950));
 }
 
 .logo hr {
