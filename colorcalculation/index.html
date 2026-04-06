@@ -47,6 +47,20 @@
             margin: 2px;
             padding: 3px;
         }
+
+        #equations{
+            font-weight: bold;
+            line-height: 0%;
+        }
+        #red:hover{
+            color: red;
+        }
+        #green:hover{
+            color: lime;
+        }
+        #blue:hover{
+            color: blue;
+        }
     </style>
 </head>
 
@@ -54,7 +68,7 @@
     <Center>
         <section id="colors">
             <div id="add">
-                <button style="float: left;">+</button>
+                <button style="float: left;" onclick="addcolor()">+</button>
                 <label>Color:</label><input type="color" id="newcolor">
                 <label>Opacity:</label><input type="number" value="30" id="newopacity">
                 <button onclick="addcolor()">ADD NEW</button>
@@ -66,6 +80,11 @@
         <section id="results">
             <div id="resultmap"></div>
             <div id="resultlog"></div>
+            <div id="equations">
+                <p id="red">(r * a) + (r0 * (1 - a))</p>
+                <p id="green">(g * a) + (g0 * (1 - a))</p>
+                <p id="blue">(b * a) + (b0 * (1 - a))</p>
+            </div>
         </section>
     </Center>
 </body>

@@ -38,13 +38,31 @@
             float: right;
         }
 
-        #outdiv p{
+        #outdiv p {
             border-bottom: 1px solid black;
+        }
+
+        #user{
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            visibility: hidden;
+            padding: 10px;
+            border: solid 1px black;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.6);
+            align-items: center;
+            justify-items: center;
         }
     </style>
 </head>
 
 <body onload="loadRegisters()">
+    <div id="user">
+        <input placeholder="username" id="student">
+        <button onclick="login()">Log-In</button>
+    </div>
     <section class="menu">
         <button onclick="toggleUi()" style="float: left;" id="toggle-btn">←</button>
         <div class="toggable-ui">
@@ -67,7 +85,7 @@
                 document.getElementById("adddiv").innerHTML += "<button onclick='register()'>Assinar</button>";
             } else {
                 document.getElementById("adddiv").innerHTML = "<label>Faça login para assinar</label>";
-                document.getElementById("adddiv").innerHTML += "<button onclick='login()'>Log-In</button>";
+                document.getElementById("adddiv").innerHTML += "<button onclick='logging()'>Log-In</button>";
             }
             firebase.database().ref("/lake/").on('value', function (snapshot) {
                 document.getElementById("outdiv").innerHTML = "<p style='text-align:center'>Assinaturas</p>";
@@ -77,8 +95,8 @@
                 });
             })
         }
-        function login() {
-            window.location = "../";
+        function logging() {
+            document.getElementById("user").style.visibility = "visible";
         }
         function register() {
             firebase.database().ref("/lake/").update({

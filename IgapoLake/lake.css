@@ -70,3 +70,33 @@ h1 {
 .logo hr {
     border-color: rgba(0, 255, 255, 0.5);
 }
+
+#projects{
+    justify-items: center;
+    justify-self: center;
+    background-color: blue;
+    width: 95%;
+    padding: 2px;
+    border: 2px inset cyan;
+}
+
+#projects button{
+    background-color: darkblue;
+    padding: 8px;
+}
+
+#projects button:hover{
+    background-color: cadetblue;
+    cursor: pointer;
+}
+
+ul{
+    width: 80%;
+    justify-self: center;
+}
+li{
+    text-align: left;
+    font-size: 30px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px lime;
+}

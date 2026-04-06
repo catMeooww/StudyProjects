@@ -25,3 +25,7 @@ function toggleUi() {
         }
     }
 }
+
+function changeModel(m) {
+    window.location = "./example.html?" + m;
+}

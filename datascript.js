@@ -15,4 +15,5 @@ function login(){
   user = document.getElementById("student").value;
   localStorage.setItem("student",user);
   document.getElementById("user").style.visibility = "hidden";
+  location.reload();
 }
